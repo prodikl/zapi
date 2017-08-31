@@ -1,0 +1,11 @@
+{
+    "require": {
+        "illuminate/database": "^5.5",
+        "silex/silex": "^2.2"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ]
+    }
+}
