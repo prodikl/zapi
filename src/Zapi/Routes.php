@@ -9,5 +9,10 @@
 namespace Zapi;
 
 abstract class Routes {
-    abstract public function routes() : array;
+    /**
+     * Returns an array of Route objects
+     *
+     * @return Route[]      An array of routes
+     */
+    abstract public function getRoutes() : array;
 }

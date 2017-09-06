@@ -8,5 +8,6 @@
 
 require("../vendor/autoload.php");
 
-/** @var Post[] $posts */
-$posts = Post::all();
+$routes = new Routes();
+$app = new \Zapi\Application($routes);
+$app->run();

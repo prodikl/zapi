@@ -1,4 +1,5 @@
 <?php
+use Zapi\Route;
 
 /**
  * Created by PhpStorm.
@@ -9,12 +10,14 @@
 class Routes extends \Zapi\Routes {
 
     /**
-     * Must return an array of \Zapi\Route objects
+     * Returns an array of Route objects
+     *
+     * @return Route[]      Returns an array of Route objects
      */
-    public function routes(): array
+    public function getRoutes(): array
     {
         return [
-            new \Zapi\Route(METHOD_GET, "posts")
+            new \Zapi\Route(METHOD_GET, "posts", "PostsController::getPosts")
         ];
     }
 }
