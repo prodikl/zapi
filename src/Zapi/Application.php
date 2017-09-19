@@ -27,6 +27,9 @@ class Application extends \Silex\Application
         $this->addRoutes();
     }
 
+    /**
+     * Adds the routes from the Routes instance
+     */
     private function addRoutes() {
         foreach($this->routes->getRoutes() as $route){
             $this->{$route->method}($route->route, $route->to);

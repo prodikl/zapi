@@ -6,8 +6,13 @@
  * Time: 12:23 AM
  */
 
+use Zapi\Application;
+use Zapi\Routes;
+
 require("../vendor/autoload.php");
 
-$routes = new Routes();
-$app = new \Zapi\Application($routes);
+$routes = new Routes(
+    new \Zapi\Route("get", "/debates", "")
+);
+$app = new Application($routes);
 $app->run();
