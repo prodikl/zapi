@@ -8,6 +8,15 @@
 
 namespace prodikl\Zapi;
 
+use Silex\Provider\ServiceControllerServiceProvider;
+
+/**
+ * Class Application
+ *
+ * The ZAPI application. By default uses Controllers.
+ *
+ * @package prodikl\Zapi
+ */
 class Application extends \Silex\Application
 {
     /** @var Routes         The Routes instance */
@@ -22,8 +31,9 @@ class Application extends \Silex\Application
     public function __construct(Routes $routes, array $values = []){
         parent::__construct($values);
 
-        $this->routes = $routes;
+        $this->register(new ServiceControllerServiceProvider());
 
+        $this->routes = $routes;
         $this->addRoutes();
     }
 

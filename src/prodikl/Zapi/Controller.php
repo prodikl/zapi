@@ -9,7 +9,7 @@
 namespace prodikl\Zapi;
 
 
-abstract class Controller extends \Silex\Controller
+abstract class Controller
 {
 
 }
