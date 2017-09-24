@@ -6,7 +6,7 @@
  * Time: 11:38 PM
  */
 
-namespace Zapi;
+namespace prodikl\Zapi;
 
 class Application extends \Silex\Application
 {

@@ -6,7 +6,7 @@
  * Time: 12:28 AM
  */
 
-namespace Zapi;
+namespace prodikl\Zapi;
 
 if(!defined("METHOD_GET")) define("METHOD_GET", "get");
 if(!defined("METHOD_POST")) define("METHOD_POST", "post");

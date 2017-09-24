@@ -6,7 +6,7 @@
  * Time: 11:20 PM
  */
 
-namespace Zapi;
+namespace prodikl\Zapi;
 
 
 abstract class Controller extends \Silex\Controller

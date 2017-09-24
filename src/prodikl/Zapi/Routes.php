@@ -6,7 +6,7 @@
  * Time: 11:49 PM
  */
 
-namespace Zapi;
+namespace prodikl\Zapi;
 
 class Routes {
 
