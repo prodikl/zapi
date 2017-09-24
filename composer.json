@@ -1,11 +1,12 @@
 {
+    "name": "prodikl/zapi",
+    "description": "The easiest API service ever",
     "require": {
         "illuminate/database": "^5.5",
-        "silex/silex": "^2.2"
+        "silex/silex": "^2.2",
+        "php": "^7.0"
     },
     "autoload": {
-        "classmap": [
-            "src"
-        ]
+        "psr-4": {"prodikl\\": "src/prodikl/"}
     }
 }

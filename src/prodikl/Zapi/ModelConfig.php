@@ -6,7 +6,7 @@
  * Time: 12:10 AM
  */
 
-namespace Zapi;
+namespace prodikl\Zapi;
 
 
 class ModelConfig

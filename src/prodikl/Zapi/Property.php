@@ -6,7 +6,7 @@
  * Time: 12:42 AM
  */
 
-namespace Zapi;
+namespace prodikl\Zapi;
 
 
 class Property

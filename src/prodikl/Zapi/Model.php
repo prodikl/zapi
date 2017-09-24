@@ -6,7 +6,7 @@
  * Time: 11:40 PM
  */
 
-namespace Zapi;
+namespace prodikl\Zapi;
 
 abstract class Model extends \Illuminate\Database\Eloquent\Model {
     /**
