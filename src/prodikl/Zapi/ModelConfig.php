@@ -17,10 +17,10 @@ class ModelConfig
     /**
      * ModelConfig constructor.
      *
-     * @param string $table            The table name
-     * @param array $properties        An array of /Zapi/Property objects
+     * @param string         $table             The table name
+     * @param Property[]     $properties        An array of /Zapi/Property objects
      */
-    public function __construct(string $table, array $properties){
+    public function __construct(string $table, Property ... $properties){
         $this->table = $table;
         $this->properties = $properties;
     }
