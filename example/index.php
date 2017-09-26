@@ -6,13 +6,13 @@
  * Time: 12:23 AM
  */
 
-use Zapi\Application;
-use Zapi\Routes;
+use prodikl\Zapi\Route;
+use prodikl\Zapi\Routes;
 
 require("../vendor/autoload.php");
 
 $routes = new Routes(
-    new \Zapi\Route("get", "/debates", "")
+    new Route("get", "/pets", "PetsController", "getPets")
 );
-$app = new Application($routes);
+$app = new PetStoreApplication($routes);
 $app->run();

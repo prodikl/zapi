@@ -15,4 +15,10 @@ abstract class Model extends \Illuminate\Database\Eloquent\Model {
      * @return ModelConfig
      */
     abstract public function config() : ModelConfig;
+
+    public function __construct(array $attributes = []) {
+        parent::__construct($attributes);
+        $this->table = $this->config()->table;
+
+    }
 }
