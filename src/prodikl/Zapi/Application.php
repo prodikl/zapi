@@ -11,6 +11,7 @@ namespace prodikl\Zapi;
 use Illuminate\Database\Capsule\Manager;
 use PDO;
 use Silex\Provider\ServiceControllerServiceProvider;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class Application
@@ -61,6 +62,32 @@ abstract class Application extends \Silex\Application
     }
 
     /**
+     * Handles the request and delivers the response.
+     *
+     * @param Request|null $request Request to process
+     *
+     * @return AllowMethodsResponse|\Symfony\Component\HttpFoundation\Response|void
+     */
+    public function run(Request $request = null){
+        if($request === null) $request = ApiRequest::createFromGlobals();
+
+        $requestMethod = $request->getMethod();
+        switch($requestMethod){
+            case 'options':
+            case 'OPTIONS':
+                $response = new AllowMethodsResponse();
+                break;
+            default:
+                # Make sure that the request is authorized
+                $response = $this->handle($request);
+        }
+
+        $response->send();
+        $this->terminate($request, $response);
+        return $response;
+    }
+
+    /**
      * Adds the routes from the Routes instance
      */
     private function addRoutes() {
@@ -85,6 +112,7 @@ abstract class Application extends \Silex\Application
             'charset' => $databaseConfig->charset,
             'collation' => $databaseConfig->collation
         ]);
+        $capsule->getConnection()->enableQueryLog();
         $capsule->setFetchMode(PDO::FETCH_ASSOC);
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
